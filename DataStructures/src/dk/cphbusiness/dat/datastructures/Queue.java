@@ -1,6 +1,6 @@
 package dk.cphbusiness.dat.datastructures;
 
-public interface Queue
+public interface Queue extends Bag
 {
 	int size();
 	void enqueue(int value);

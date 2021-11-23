@@ -16,6 +16,18 @@ public class QueueImpl implements Queue
 	}
 
 	@Override
+	public void add(int value)
+	{
+		enqueue(value);
+	}
+
+	@Override
+	public int takeNext()
+	{
+		return dequeue();
+	}
+
+	@Override
 	public void enqueue(int value)
 	{
 		list.addLast(value);
