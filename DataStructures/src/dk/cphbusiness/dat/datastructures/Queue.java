@@ -1,8 +1,8 @@
 package dk.cphbusiness.dat.datastructures;
 
-public interface Queue extends Bag
+public interface Queue<T>
 {
 	int size();
-	void enqueue(int value);
-	int dequeue();
+	void enqueue(T value);
+	T dequeue();
 }

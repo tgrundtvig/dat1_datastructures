@@ -1,10 +1,10 @@
 package dk.cphbusiness.dat.datastructures;
 
-public class QueueImpl implements Queue
+public class QueueImpl<T> implements Queue<T>
 {
-	private final SimpleList list;
+	private final SimpleList<T> list;
 
-	public QueueImpl(SimpleList list)
+	public QueueImpl(SimpleList<T> list)
 	{
 		this.list = list;
 	}
@@ -16,25 +16,13 @@ public class QueueImpl implements Queue
 	}
 
 	@Override
-	public void add(int value)
-	{
-		enqueue(value);
-	}
-
-	@Override
-	public int takeNext()
-	{
-		return dequeue();
-	}
-
-	@Override
-	public void enqueue(int value)
+	public void enqueue(T value)
 	{
 		list.addLast(value);
 	}
 
 	@Override
-	public int dequeue()
+	public T dequeue()
 	{
 		return list.takeFirst();
 	}

@@ -9,26 +9,26 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public interface QueueTest
 {
-	Queue createNewQueue();
+	Queue<Integer> createNewQueue();
 
 	@Test
 	default void newQueueIsEmpty()
 	{
-		Queue q = createNewQueue();
+		Queue<Integer> q = createNewQueue();
 		assertEquals(0, q.size());
 	}
 
 	@Test
 	default void throwsNoSuchElementException()
 	{
-		Queue q = createNewQueue();
+		Queue<Integer> q = createNewQueue();
 		assertThrows(NoSuchElementException.class, () -> {q.dequeue();});
 	}
 
 	@Test
 	default void useCaseTest()
 	{
-		Queue q = createNewQueue();
+		Queue<Integer> q = createNewQueue();
 		q.enqueue(42);
 		assertEquals(1, q.size());
 		q.enqueue(7);

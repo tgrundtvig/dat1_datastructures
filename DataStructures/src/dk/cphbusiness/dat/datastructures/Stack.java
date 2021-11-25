@@ -1,8 +1,8 @@
 package dk.cphbusiness.dat.datastructures;
 
-public interface Stack extends Bag
+public interface Stack<T>
 {
 	int size();
-	void push(int value);
-	int pop();
+	void push(T value);
+	T pop();
 }

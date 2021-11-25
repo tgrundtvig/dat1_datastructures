@@ -1,10 +1,10 @@
 package dk.cphbusiness.dat.datastructures;
 
-public class StackImpl implements Stack
+public class StackImpl<T> implements Stack<T>
 {
-	private final SimpleList list;
+	private final SimpleList<T> list;
 
-	public StackImpl(SimpleList list)
+	public StackImpl(SimpleList<T> list)
 	{
 		this.list = list;
 	}
@@ -16,25 +16,13 @@ public class StackImpl implements Stack
 	}
 
 	@Override
-	public void add(int value)
-	{
-		push(value);
-	}
-
-	@Override
-	public int takeNext()
-	{
-		return pop();
-	}
-
-	@Override
-	public void push(int value)
+	public void push(T value)
 	{
 		list.addFirst(value);
 	}
 
 	@Override
-	public int pop()
+	public T pop()
 	{
 		return list.takeFirst();
 	}

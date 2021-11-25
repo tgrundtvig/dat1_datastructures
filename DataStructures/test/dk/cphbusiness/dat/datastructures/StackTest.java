@@ -9,26 +9,26 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public interface StackTest
 {
-	Stack createNewStack();
+	Stack<Integer> createNewStack();
 
 	@Test
 	default void newStackIsEmpty()
 	{
-		Stack s = createNewStack();
+		Stack<Integer> s = createNewStack();
 		assertEquals(0, s.size());
 	}
 
 	@Test
 	default void throwsNoSuchElementException()
 	{
-		Stack s = createNewStack();
+		Stack<Integer> s = createNewStack();
 		assertThrows(NoSuchElementException.class, () -> {s.pop();});
 	}
 
 	@Test
 	default void useCaseTest()
 	{
-		Stack s = createNewStack();
+		Stack<Integer> s = createNewStack();
 		s.push(42);
 		assertEquals(1, s.size());
 		s.push(7);

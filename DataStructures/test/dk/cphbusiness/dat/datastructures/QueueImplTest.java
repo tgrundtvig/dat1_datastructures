@@ -3,8 +3,8 @@ package dk.cphbusiness.dat.datastructures;
 public class QueueImplTest implements QueueTest
 {
 	@Override
-	public Queue createNewQueue()
+	public Queue<Integer> createNewQueue()
 	{
-		return new QueueImpl(new SimpleListImpl());
+		return new QueueImpl<Integer>(new SimpleListImpl<Integer>());
 	}
 }

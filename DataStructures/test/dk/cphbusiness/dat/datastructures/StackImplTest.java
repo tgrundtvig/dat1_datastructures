@@ -3,8 +3,8 @@ package dk.cphbusiness.dat.datastructures;
 public class StackImplTest implements StackTest
 {
 	@Override
-	public Stack createNewStack()
+	public Stack<Integer> createNewStack()
 	{
-		return new StackImpl(new SimpleListImpl());
+		return new StackImpl<Integer>(new SimpleListImpl<Integer>());
 	}
 }

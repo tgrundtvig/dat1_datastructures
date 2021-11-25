@@ -1,14 +1,14 @@
 package dk.cphbusiness.dat.datastructures;
 
-public interface SimpleList
+public interface SimpleList<T>
 {
 	int size();
 
-	void addFirst(int value);
+	void addFirst(T value);
 
-	void addLast(int value);
+	void addLast(T value);
 
-	int takeFirst();
+	T takeFirst();
 
-	int takeLast();
+	T takeLast();
 }

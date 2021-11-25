@@ -1,10 +1,10 @@
 package dk.cphbusiness.dat.datastructures;
 
-public interface ListNode
+public interface ListNode<T>
 {
-	public int getValue();
-	public ListNode getPrev();
-	public void setPrev(ListNode prev);
-	public ListNode getNext();
-	public void setNext(ListNode next);
+	public T getValue();
+	public ListNode<T> getPrev();
+	public void setPrev(ListNode<T> prev);
+	public ListNode<T> getNext();
+	public void setNext(ListNode<T> next);
 }

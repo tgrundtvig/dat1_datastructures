@@ -2,10 +2,10 @@ package dk.cphbusiness.dat.datastructures;
 
 import java.util.NoSuchElementException;
 
-public class SimpleListImpl implements SimpleList, ListNode
+public class SimpleListImpl<T> implements SimpleList<T>, ListNode<T>
 {
-	private ListNode first;
-	private ListNode last;
+	private ListNode<T> first;
+	private ListNode<T> last;
 	private int size;
 
 	public SimpleListImpl()
@@ -22,7 +22,7 @@ public class SimpleListImpl implements SimpleList, ListNode
 	}
 
 	@Override
-	public void addFirst(int value)
+	public void addFirst(T value)
 	{
 		ListNode newNode = new ListNodeImpl(value);
 		newNode.setNext(first);
@@ -33,7 +33,7 @@ public class SimpleListImpl implements SimpleList, ListNode
 	}
 
 	@Override
-	public void addLast(int value)
+	public void addLast(T value)
 	{
 		ListNode newNode = new ListNodeImpl(value);
 		newNode.setPrev(last);
@@ -44,13 +44,13 @@ public class SimpleListImpl implements SimpleList, ListNode
 	}
 
 	@Override
-	public int takeFirst()
+	public T takeFirst()
 	{
 		if(size == 0)
 		{
 			throw new NoSuchElementException("The list is empty!");
 		}
-		int res = first.getValue();
+		T res = first.getValue();
 		first.getNext().setPrev(this);
 		first = first.getNext();
 		--size;
@@ -58,13 +58,13 @@ public class SimpleListImpl implements SimpleList, ListNode
 	}
 
 	@Override
-	public int takeLast()
+	public T takeLast()
 	{
 		if(size == 0)
 		{
 			throw new NoSuchElementException("The list is empty!");
 		}
-		int res = last.getValue();
+		T res = last.getValue();
 		last.getPrev().setNext(this);
 		last = last.getPrev();
 		--size;
@@ -72,31 +72,31 @@ public class SimpleListImpl implements SimpleList, ListNode
 	}
 
 	@Override
-	public int getValue()
+	public T getValue()
 	{
 		throw new UnsupportedOperationException("The list itself has no value!");
 	}
 
 	@Override
-	public ListNode getPrev()
+	public ListNode<T> getPrev()
 	{
 		return last;
 	}
 
 	@Override
-	public void setPrev(ListNode prev)
+	public void setPrev(ListNode<T> prev)
 	{
 		last = prev;
 	}
 
 	@Override
-	public ListNode getNext()
+	public ListNode<T> getNext()
 	{
 		return first;
 	}
 
 	@Override
-	public void setNext(ListNode next)
+	public void setNext(ListNode<T> next)
 	{
 		first = next;
 	}

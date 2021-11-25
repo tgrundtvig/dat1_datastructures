@@ -1,39 +1,39 @@
 package dk.cphbusiness.dat.datastructures;
 
-public class ListNodeImpl implements ListNode
+public class ListNodeImpl<T> implements ListNode<T>
 {
-	private final int value;
-	private ListNode prev;
-	private ListNode next;
+	private final T value;
+	private ListNode<T> prev;
+	private ListNode<T> next;
 
-	public ListNodeImpl(int value)
+	public ListNodeImpl(T value)
 	{
 		this.value = value;
 		this.prev = null;
 		this.next = null;
 	}
 
-	public int getValue()
+	public T getValue()
 	{
 		return value;
 	}
 
-	public ListNode getPrev()
+	public ListNode<T> getPrev()
 	{
 		return prev;
 	}
 
-	public void setPrev(ListNode prev)
+	public void setPrev(ListNode<T> prev)
 	{
 		this.prev = prev;
 	}
 
-	public ListNode getNext()
+	public ListNode<T> getNext()
 	{
 		return next;
 	}
 
-	public void setNext(ListNode next)
+	public void setNext(ListNode<T> next)
 	{
 		this.next = next;
 	}

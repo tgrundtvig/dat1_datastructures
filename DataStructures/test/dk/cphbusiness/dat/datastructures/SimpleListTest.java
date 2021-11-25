@@ -9,33 +9,33 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public interface SimpleListTest
 {
-	SimpleList createNewSimpleList();
+	SimpleList<Integer> createNewSimpleList();
 
 	@Test
 	default void newSimpleListIsEmpty()
 	{
-		SimpleList sl = createNewSimpleList();
+		SimpleList<Integer> sl = createNewSimpleList();
 		assertEquals(0, sl.size());
 	}
 
 	@Test
 	default void throwsNoSuchElementExceptionOnTakeFirst()
 	{
-		SimpleList sl = createNewSimpleList();
+		SimpleList<Integer> sl = createNewSimpleList();
 		assertThrows(NoSuchElementException.class, () -> {sl.takeFirst();});
 	}
 
 	@Test
 	default void throwsNoSuchElementExceptionOnTakeLast()
 	{
-		SimpleList sl = createNewSimpleList();
+		SimpleList<Integer> sl = createNewSimpleList();
 		assertThrows(NoSuchElementException.class, () -> {sl.takeLast();});
 	}
 
 	@Test
 	default void useCaseTest()
 	{
-		SimpleList sl = createNewSimpleList();
+		SimpleList<Integer> sl = createNewSimpleList();
 
 		sl.addLast(42);
 		//[42]
